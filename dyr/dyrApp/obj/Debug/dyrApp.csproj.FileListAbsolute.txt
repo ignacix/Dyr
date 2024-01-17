@@ -1,0 +1,16 @@
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\dyrApp.exe.config
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\dyrApp.exe
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\dyrApp.pdb
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.csproj.AssemblyReference.cache
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.Form1.resources
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.Properties.Resources.resources
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.csproj.GenerateResource.cache
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.csproj.CoreCompileInputs.cache
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.exe
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.pdb
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\Dominio.dll
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\Negocio.dll
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\Dominio.pdb
+C:\Users\ignan\Desktop\dyr\dyrApp\bin\Debug\Negocio.pdb
+C:\Users\ignan\Desktop\dyr\dyrApp\obj\Debug\dyrApp.csproj.CopyComplete

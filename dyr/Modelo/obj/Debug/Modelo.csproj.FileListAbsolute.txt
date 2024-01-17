@@ -1,0 +1,12 @@
+C:\Users\ignan\Desktop\dyr\Modelo\bin\Debug\Modelo.dll
+C:\Users\ignan\Desktop\dyr\Modelo\bin\Debug\Modelo.pdb
+C:\Users\ignan\Desktop\dyr\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\ignan\Desktop\dyr\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\ignan\Desktop\dyr\Modelo\obj\Debug\Modelo.dll
+C:\Users\ignan\Desktop\dyr\Modelo\obj\Debug\Modelo.pdb
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\bin\Debug\Modelo.dll
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\bin\Debug\Modelo.pdb
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\obj\Debug\Modelo.dll
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Modelo\obj\Debug\Modelo.pdb

@@ -1,0 +1,28 @@
+C:\Users\ignan\Desktop\Dyr\Dyr\bin\Debug\Dyr.exe.config
+C:\Users\ignan\Desktop\Dyr\Dyr\bin\Debug\Dyr.exe
+C:\Users\ignan\Desktop\Dyr\Dyr\bin\Debug\Dyr.pdb
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.csproj.AssemblyReference.cache
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.csproj.SuggestedBindingRedirects.cache
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.Form1.resources
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.Properties.Resources.resources
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.csproj.GenerateResource.cache
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.csproj.CoreCompileInputs.cache
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.exe
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.pdb
+C:\Users\ignan\Desktop\Dyr\Dyr\bin\Debug\Modelo.dll
+C:\Users\ignan\Desktop\Dyr\Dyr\bin\Debug\Modelo.pdb
+C:\Users\ignan\Desktop\Dyr\Dyr\obj\Debug\Dyr.csproj.CopyComplete
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\bin\Debug\Dyr.exe.config
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\bin\Debug\Dyr.exe
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\bin\Debug\Dyr.pdb
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\bin\Debug\Modelo.dll
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\bin\Debug\Modelo.pdb
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.csproj.AssemblyReference.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.csproj.SuggestedBindingRedirects.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.Form1.resources
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.Properties.Resources.resources
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.csproj.GenerateResource.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.csproj.CoreCompileInputs.cache
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.csproj.CopyComplete
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.exe
+C:\Users\ignan\Desktop\Nueva carpeta (2)\Dyr\dyr\Dyr\obj\Debug\Dyr.pdb
