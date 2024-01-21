@@ -17,7 +17,7 @@ namespace Dyr
     {
         private bool flagMenu = true;
         private int[] listaRandoms = new int[10];
-        private int count = 0;
+        private int count = 0, rPositivos = 0, rnegativos = 0; 
         private List<Palabra> listaPalabras = new List<Palabra>();
         public Form1()
         {
@@ -34,7 +34,8 @@ namespace Dyr
         {
             this.gbCargar.Visible = false;
             this.gbEditar.Visible = false;
-            this.gbPracticar.Visible = false;            
+            this.gbPracticar.Visible = false;
+            this.gbResultado.Visible = false; 
         }
 
 
@@ -45,21 +46,16 @@ namespace Dyr
             Console.WriteLine("la lista de números tiene : " + devolverDiezRandom().Count());
             menu();
             devolverDiezRandom();
-            obtenerPalabras();
-            Console.WriteLine("Los npumeros son:");
+            this.listaPalabras = obtenerPalabras();
 
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("EN LA POSICIÓN :" + i + " : " + this.listaRandoms[i]);
+            lblMeaning.Visible = false; 
+            lblWord.Text = listaPalabras[count].word;
+                              
+            this.gbPracticar.Visible= true;
+            this.btnCargarSi.Visible = false;
+            this.btnCargarNo.Visible = false;
+            this.lblPregunta.Visible = false; 
 
-            }
-
-
-
-            this.gbPracticar.Visible = true;            
-            
-       
-            this.gbPracticar.Visible= true;                                                                        
         }
 
 
@@ -117,8 +113,7 @@ namespace Dyr
 
             for (int i = 0; i < 10; i++)
             {
-                aux.Add(listaPalabras[listaRandoms[i]]);
-                Console.WriteLine(aux[i].word + "  : "+ aux[i].meaning);
+                aux.Add(listaPalabras[listaRandoms[i]]);                
             }
             
             return aux;
@@ -162,9 +157,84 @@ namespace Dyr
             this.gbCargar.Visible = false;
             this.gbEditar.Visible = false; 
             this.gbPracticar.Visible = false;
+            this.gbResultado.Visible = false; 
             menu();
-            
+            this.count = 0;
+            this.rPositivos = 0;
+            this.rnegativos = 0;
+
         }
 
+        private void btnCargarSi_Click(object sender, EventArgs e)
+        {
+            rPositivos++;
+            count++;
+            comprobarJuego();
+            esconderSiNo();
+
+
+        }
+
+        private void btnCargarNo_Click(object sender, EventArgs e)
+        {
+            rnegativos++;
+            count++;
+            comprobarJuego();
+            esconderSiNo();
+        }
+
+        private void btnResultadoDenuevo_Click(object sender, EventArgs e)
+        {
+            this.gbResultado.Visible = false;
+            devolverDiezRandom();
+            this.listaPalabras = obtenerPalabras();
+
+            lblMeaning.Visible = false;
+            lblWord.Text = listaPalabras[count].word;
+
+
+            this.gbPracticar.Visible = true;
+
+        }
+
+        private void btnResultadoAtras_Click(object sender, EventArgs e)
+        {
+            atras();
+        }
+
+        private void btnCargarMostrar_Click(object sender, EventArgs e)
+        {
+
+            lblMeaning.Text = this.listaPalabras[count].meaning;
+            lblMeaning.Visible = true;
+            lblPregunta.Visible = true;
+            this.btnCargarSi.Visible = true;
+            this.btnCargarNo.Visible = true; 
+        }
+
+        private void comprobarJuego()
+        {
+            if (count == 10)
+            {
+                this.gbResultado.Visible = true;
+                this.gbPracticar.Visible = false;
+                this.lblResultado.Text = $"Aciertos: {rPositivos}  Fallos: {rnegativos}";
+                this.count = 0;
+                this.rPositivos = 0;
+                this.rnegativos = 0; 
+            }
+            else
+            {
+                lblMeaning.Visible = false;
+                lblWord.Text = listaPalabras[count].word;
+            }
+        }
+
+        private void esconderSiNo()
+        {
+            this.lblPregunta.Visible = false; 
+            this.btnCargarSi.Visible = false;
+            this.btnCargarNo.Visible = false;
+        }
     }
 }
