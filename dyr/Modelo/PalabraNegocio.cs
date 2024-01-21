@@ -15,6 +15,28 @@ namespace Modelo
             this.acceso = new AccesoDatos();
         }
 
+
+        public void Cargar(Palabra palabra)
+        {
+            try
+            {
+                acceso.setearConsulta($"insert into PALABRAS (word, meaning) values ('{palabra.word}','{palabra.meaning}')");
+                acceso.ejecutarConsulta();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
+
+
+
+
+
         public List<Palabra> leer()
         {
             List<Palabra> lista = new List<Palabra>(); ;
@@ -36,7 +58,6 @@ namespace Modelo
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
