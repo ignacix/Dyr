@@ -10,6 +10,7 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 
 namespace Dyr
 {
@@ -19,6 +20,7 @@ namespace Dyr
         private int[] listaRandoms = new int[10];
         private int count = 0, rPositivos = 0, rnegativos = 0; 
         private List<Palabra> listaPalabras = new List<Palabra>();
+        private SpeechSynthesizer speech = new SpeechSynthesizer();
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace Dyr
         private void btnCargar_Click(object sender, EventArgs e)
         {
             menu();
+            this.gbCargar.Location = new Point(289, 165);
             this.gbCargar.Visible = true;         
         }
 
@@ -46,15 +49,17 @@ namespace Dyr
             Console.WriteLine("la lista de números tiene : " + devolverDiezRandom().Count());
             menu();
             devolverDiezRandom();
-            this.listaPalabras = obtenerPalabras();
+            this.listaPalabras = obtenerPalabras();            
 
             lblMeaning.Visible = false; 
             lblWord.Text = listaPalabras[count].word;
-                              
+            this.gbPracticar.Location = new Point(289, 165);
+
             this.gbPracticar.Visible= true;
             this.btnCargarSi.Visible = false;
             this.btnCargarNo.Visible = false;
             this.lblPregunta.Visible = false; 
+            speech.Speak(listaPalabras[count].word);
 
         }
 
@@ -169,23 +174,23 @@ namespace Dyr
         {
             rPositivos++;
             count++;
-            comprobarJuego();
+            bool estado = comprobarJuego();
             esconderSiNo();
-
-
+            decirPalabra(estado);
         }
 
         private void btnCargarNo_Click(object sender, EventArgs e)
         {
             rnegativos++;
             count++;
-            comprobarJuego();
+            bool estado = comprobarJuego();
             esconderSiNo();
+            decirPalabra(estado);
         }
 
         private void btnResultadoDenuevo_Click(object sender, EventArgs e)
         {
-            this.gbResultado.Visible = false;
+             this.gbResultado.Visible = false;
             devolverDiezRandom();
             this.listaPalabras = obtenerPalabras();
 
@@ -194,6 +199,7 @@ namespace Dyr
 
 
             this.gbPracticar.Visible = true;
+            speech.Speak(listaPalabras[count].word);
 
         }
 
@@ -212,22 +218,32 @@ namespace Dyr
             this.btnCargarNo.Visible = true; 
         }
 
-        private void comprobarJuego()
+        private bool comprobarJuego()
         {
             if (count == 10)
             {
+                this.gbResultado.Location = new Point(289, 165);
                 this.gbResultado.Visible = true;
                 this.gbPracticar.Visible = false;
                 this.lblResultado.Text = $"Aciertos: {rPositivos}  Fallos: {rnegativos}";
                 this.count = 0;
                 this.rPositivos = 0;
-                this.rnegativos = 0; 
+                this.rnegativos = 0;
+                return false;
             }
             else
             {
                 lblMeaning.Visible = false;
                 lblWord.Text = listaPalabras[count].word;
+                return true;
             }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            menu();
+            this.gbEditar.Location= new Point(289, 165);
+            this.gbEditar.Visible = true;
         }
 
         private void esconderSiNo()
@@ -235,6 +251,14 @@ namespace Dyr
             this.lblPregunta.Visible = false; 
             this.btnCargarSi.Visible = false;
             this.btnCargarNo.Visible = false;
+        }
+
+        private void decirPalabra(bool estado)
+        {
+            if (estado)
+            {
+                this.speech.Speak(listaPalabras[count].word);
+            }
         }
     }
 }

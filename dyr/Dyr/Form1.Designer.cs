@@ -42,18 +42,22 @@
             this.btnCargarMostrar = new System.Windows.Forms.Button();
             this.lblWord = new System.Windows.Forms.Label();
             this.gbPracticar = new System.Windows.Forms.GroupBox();
+            this.lblPregunta = new System.Windows.Forms.Label();
             this.atras2 = new System.Windows.Forms.Button();
             this.gbEditar = new System.Windows.Forms.GroupBox();
             this.atras3 = new System.Windows.Forms.Button();
             this.gbResultado = new System.Windows.Forms.GroupBox();
-            this.lblResultado = new System.Windows.Forms.Label();
-            this.btnResultadoDenuevo = new System.Windows.Forms.Button();
             this.btnResultadoAtras = new System.Windows.Forms.Button();
-            this.lblPregunta = new System.Windows.Forms.Label();
+            this.btnResultadoDenuevo = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbCargar.SuspendLayout();
             this.gbPracticar.SuspendLayout();
             this.gbEditar.SuspendLayout();
             this.gbResultado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCargar
@@ -84,9 +88,12 @@
             this.btnEditar.TabIndex = 0;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // gbCargar
             // 
+            this.gbCargar.Controls.Add(this.label2);
+            this.gbCargar.Controls.Add(this.label1);
             this.gbCargar.Controls.Add(this.atras1);
             this.gbCargar.Controls.Add(this.btnGbCargar);
             this.gbCargar.Controls.Add(this.txbCargarMeaning);
@@ -110,24 +117,24 @@
             // 
             // btnGbCargar
             // 
-            this.btnGbCargar.Location = new System.Drawing.Point(63, 126);
+            this.btnGbCargar.Location = new System.Drawing.Point(75, 116);
             this.btnGbCargar.Name = "btnGbCargar";
             this.btnGbCargar.Size = new System.Drawing.Size(75, 23);
             this.btnGbCargar.TabIndex = 2;
-            this.btnGbCargar.Text = "button1";
+            this.btnGbCargar.Text = "Cargar";
             this.btnGbCargar.UseVisualStyleBackColor = true;
             this.btnGbCargar.Click += new System.EventHandler(this.btnGbCargar_Click);
             // 
             // txbCargarMeaning
             // 
-            this.txbCargarMeaning.Location = new System.Drawing.Point(52, 99);
+            this.txbCargarMeaning.Location = new System.Drawing.Point(75, 81);
             this.txbCargarMeaning.Name = "txbCargarMeaning";
             this.txbCargarMeaning.Size = new System.Drawing.Size(100, 20);
             this.txbCargarMeaning.TabIndex = 1;
             // 
             // txbCargarWord
             // 
-            this.txbCargarWord.Location = new System.Drawing.Point(47, 45);
+            this.txbCargarWord.Location = new System.Drawing.Point(75, 47);
             this.txbCargarWord.Name = "txbCargarWord";
             this.txbCargarWord.Size = new System.Drawing.Size(100, 20);
             this.txbCargarWord.TabIndex = 0;
@@ -196,6 +203,15 @@
             this.gbPracticar.TabStop = false;
             this.gbPracticar.Text = "groupBox1";
             // 
+            // lblPregunta
+            // 
+            this.lblPregunta.AutoSize = true;
+            this.lblPregunta.Location = new System.Drawing.Point(70, 102);
+            this.lblPregunta.Name = "lblPregunta";
+            this.lblPregunta.Size = new System.Drawing.Size(84, 13);
+            this.lblPregunta.TabIndex = 5;
+            this.lblPregunta.Text = "¿Lo recordaste?";
+            // 
             // atras2
             // 
             this.atras2.Location = new System.Drawing.Point(187, 19);
@@ -208,6 +224,7 @@
             // 
             // gbEditar
             // 
+            this.gbEditar.Controls.Add(this.dataGridView1);
             this.gbEditar.Controls.Add(this.atras3);
             this.gbEditar.Location = new System.Drawing.Point(540, 165);
             this.gbEditar.Name = "gbEditar";
@@ -238,14 +255,15 @@
             this.gbResultado.TabStop = false;
             this.gbResultado.Text = "groupBox1";
             // 
-            // lblResultado
+            // btnResultadoAtras
             // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(105, 50);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(35, 13);
-            this.lblResultado.TabIndex = 0;
-            this.lblResultado.Text = "label1";
+            this.btnResultadoAtras.Location = new System.Drawing.Point(187, 19);
+            this.btnResultadoAtras.Name = "btnResultadoAtras";
+            this.btnResultadoAtras.Size = new System.Drawing.Size(42, 23);
+            this.btnResultadoAtras.TabIndex = 2;
+            this.btnResultadoAtras.Text = "Atrás";
+            this.btnResultadoAtras.UseVisualStyleBackColor = true;
+            this.btnResultadoAtras.Click += new System.EventHandler(this.btnResultadoAtras_Click);
             // 
             // btnResultadoDenuevo
             // 
@@ -257,24 +275,40 @@
             this.btnResultadoDenuevo.UseVisualStyleBackColor = true;
             this.btnResultadoDenuevo.Click += new System.EventHandler(this.btnResultadoDenuevo_Click);
             // 
-            // btnResultadoAtras
+            // lblResultado
             // 
-            this.btnResultadoAtras.Location = new System.Drawing.Point(187, 19);
-            this.btnResultadoAtras.Name = "btnResultadoAtras";
-            this.btnResultadoAtras.Size = new System.Drawing.Size(42, 23);
-            this.btnResultadoAtras.TabIndex = 2;
-            this.btnResultadoAtras.Text = "Atrás";
-            this.btnResultadoAtras.UseVisualStyleBackColor = true;
-            this.btnResultadoAtras.Click += new System.EventHandler(this.btnResultadoAtras_Click);
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(69, 52);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(35, 13);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "label1";
             // 
-            // lblPregunta
+            // label1
             // 
-            this.lblPregunta.AutoSize = true;
-            this.lblPregunta.Location = new System.Drawing.Point(70, 102);
-            this.lblPregunta.Name = "lblPregunta";
-            this.lblPregunta.Size = new System.Drawing.Size(84, 13);
-            this.lblPregunta.TabIndex = 5;
-            this.lblPregunta.Text = "¿Lo recordaste?";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Palabra:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Significado:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(204, 89);
+            this.dataGridView1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -298,6 +332,7 @@
             this.gbEditar.ResumeLayout(false);
             this.gbResultado.ResumeLayout(false);
             this.gbResultado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -326,6 +361,9 @@
         private System.Windows.Forms.Button btnResultadoDenuevo;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label lblPregunta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
