@@ -32,6 +32,8 @@
             this.btnPracticar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gbCargar = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.atras1 = new System.Windows.Forms.Button();
             this.btnGbCargar = new System.Windows.Forms.Button();
             this.txbCargarMeaning = new System.Windows.Forms.TextBox();
@@ -45,19 +47,17 @@
             this.lblPregunta = new System.Windows.Forms.Label();
             this.atras2 = new System.Windows.Forms.Button();
             this.gbEditar = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.atras3 = new System.Windows.Forms.Button();
             this.gbResultado = new System.Windows.Forms.GroupBox();
             this.btnResultadoAtras = new System.Windows.Forms.Button();
             this.btnResultadoDenuevo = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbCargar.SuspendLayout();
             this.gbPracticar.SuspendLayout();
             this.gbEditar.SuspendLayout();
-            this.gbResultado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gbResultado.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCargar
@@ -105,6 +105,24 @@
             this.gbCargar.TabStop = false;
             this.gbCargar.Text = "groupBox1";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Significado:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Palabra:";
+            // 
             // atras1
             // 
             this.atras1.Location = new System.Drawing.Point(187, 19);
@@ -142,15 +160,16 @@
             // lblMeaning
             // 
             this.lblMeaning.AutoSize = true;
-            this.lblMeaning.Location = new System.Drawing.Point(94, 81);
+            this.lblMeaning.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblMeaning.Location = new System.Drawing.Point(84, 119);
             this.lblMeaning.Name = "lblMeaning";
-            this.lblMeaning.Size = new System.Drawing.Size(35, 13);
+            this.lblMeaning.Size = new System.Drawing.Size(75, 28);
             this.lblMeaning.TabIndex = 4;
             this.lblMeaning.Text = "label1";
             // 
             // btnCargarNo
             // 
-            this.btnCargarNo.Location = new System.Drawing.Point(157, 116);
+            this.btnCargarNo.Location = new System.Drawing.Point(197, 168);
             this.btnCargarNo.Name = "btnCargarNo";
             this.btnCargarNo.Size = new System.Drawing.Size(31, 23);
             this.btnCargarNo.TabIndex = 3;
@@ -160,7 +179,7 @@
             // 
             // btnCargarSi
             // 
-            this.btnCargarSi.Location = new System.Drawing.Point(36, 116);
+            this.btnCargarSi.Location = new System.Drawing.Point(40, 168);
             this.btnCargarSi.Name = "btnCargarSi";
             this.btnCargarSi.Size = new System.Drawing.Size(31, 23);
             this.btnCargarSi.TabIndex = 2;
@@ -170,7 +189,7 @@
             // 
             // btnCargarMostrar
             // 
-            this.btnCargarMostrar.Location = new System.Drawing.Point(79, 45);
+            this.btnCargarMostrar.Location = new System.Drawing.Point(84, 88);
             this.btnCargarMostrar.Name = "btnCargarMostrar";
             this.btnCargarMostrar.Size = new System.Drawing.Size(75, 23);
             this.btnCargarMostrar.TabIndex = 1;
@@ -181,9 +200,10 @@
             // lblWord
             // 
             this.lblWord.AutoSize = true;
-            this.lblWord.Location = new System.Drawing.Point(94, 24);
+            this.lblWord.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWord.Location = new System.Drawing.Point(79, 53);
             this.lblWord.Name = "lblWord";
-            this.lblWord.Size = new System.Drawing.Size(35, 13);
+            this.lblWord.Size = new System.Drawing.Size(75, 28);
             this.lblWord.TabIndex = 0;
             this.lblWord.Text = "label1";
             // 
@@ -196,9 +216,9 @@
             this.gbPracticar.Controls.Add(this.btnCargarNo);
             this.gbPracticar.Controls.Add(this.btnCargarMostrar);
             this.gbPracticar.Controls.Add(this.btnCargarSi);
-            this.gbPracticar.Location = new System.Drawing.Point(289, 165);
+            this.gbPracticar.Location = new System.Drawing.Point(259, 96);
             this.gbPracticar.Name = "gbPracticar";
-            this.gbPracticar.Size = new System.Drawing.Size(235, 155);
+            this.gbPracticar.Size = new System.Drawing.Size(265, 224);
             this.gbPracticar.TabIndex = 2;
             this.gbPracticar.TabStop = false;
             this.gbPracticar.Text = "groupBox1";
@@ -206,7 +226,7 @@
             // lblPregunta
             // 
             this.lblPregunta.AutoSize = true;
-            this.lblPregunta.Location = new System.Drawing.Point(70, 102);
+            this.lblPregunta.Location = new System.Drawing.Point(91, 157);
             this.lblPregunta.Name = "lblPregunta";
             this.lblPregunta.Size = new System.Drawing.Size(84, 13);
             this.lblPregunta.TabIndex = 5;
@@ -214,7 +234,7 @@
             // 
             // atras2
             // 
-            this.atras2.Location = new System.Drawing.Point(187, 19);
+            this.atras2.Location = new System.Drawing.Point(197, 19);
             this.atras2.Name = "atras2";
             this.atras2.Size = new System.Drawing.Size(42, 23);
             this.atras2.TabIndex = 3;
@@ -226,12 +246,20 @@
             // 
             this.gbEditar.Controls.Add(this.dataGridView1);
             this.gbEditar.Controls.Add(this.atras3);
-            this.gbEditar.Location = new System.Drawing.Point(540, 165);
+            this.gbEditar.Location = new System.Drawing.Point(504, 96);
             this.gbEditar.Name = "gbEditar";
-            this.gbEditar.Size = new System.Drawing.Size(235, 155);
+            this.gbEditar.Size = new System.Drawing.Size(271, 224);
             this.gbEditar.TabIndex = 3;
             this.gbEditar.TabStop = false;
             this.gbEditar.Text = "groupBox1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 50);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(231, 158);
+            this.dataGridView1.TabIndex = 4;
             // 
             // atras3
             // 
@@ -248,9 +276,9 @@
             this.gbResultado.Controls.Add(this.btnResultadoAtras);
             this.gbResultado.Controls.Add(this.btnResultadoDenuevo);
             this.gbResultado.Controls.Add(this.lblResultado);
-            this.gbResultado.Location = new System.Drawing.Point(141, 23);
+            this.gbResultado.Location = new System.Drawing.Point(12, 57);
             this.gbResultado.Name = "gbResultado";
-            this.gbResultado.Size = new System.Drawing.Size(235, 155);
+            this.gbResultado.Size = new System.Drawing.Size(280, 155);
             this.gbResultado.TabIndex = 4;
             this.gbResultado.TabStop = false;
             this.gbResultado.Text = "groupBox1";
@@ -278,37 +306,12 @@
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(69, 52);
+            this.lblResultado.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblResultado.Location = new System.Drawing.Point(23, 50);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(35, 13);
+            this.lblResultado.Size = new System.Drawing.Size(75, 28);
             this.lblResultado.TabIndex = 0;
             this.lblResultado.Text = "label1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Palabra:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Significado:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(204, 89);
-            this.dataGridView1.TabIndex = 4;
             // 
             // Form1
             // 
@@ -330,9 +333,9 @@
             this.gbPracticar.ResumeLayout(false);
             this.gbPracticar.PerformLayout();
             this.gbEditar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbResultado.ResumeLayout(false);
             this.gbResultado.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

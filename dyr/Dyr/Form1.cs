@@ -134,6 +134,8 @@ namespace Dyr
                 aux.meaning = this.txbCargarMeaning.Text;
                 negocio.Cargar(aux);
                 MessageBox.Show($"La palabra : {aux.word}, se ha cargado exitosamente");
+                this.txbCargarMeaning.Text = ""; 
+                this.txbCargarWord.Text = "";
             }
             else
             {
@@ -244,7 +246,12 @@ namespace Dyr
             menu();
             this.gbEditar.Location= new Point(289, 165);
             this.gbEditar.Visible = true;
-        }
+            PalabraNegocio negocio = new PalabraNegocio();
+            
+            this.dataGridView1.DataSource = negocio.leer();
+            this.dataGridView1.Columns["id"].Visible = false;
+            
+        }        
 
         private void esconderSiNo()
         {
