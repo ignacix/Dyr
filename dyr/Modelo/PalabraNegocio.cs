@@ -49,6 +49,7 @@ namespace Modelo
                 while (acceso.Reader().Read())
                 {
                     Palabra aux = new Palabra();
+                    aux.id = (int)acceso.Reader()["id"];
                     aux.word = (string)acceso.Reader()["word"];
                     aux.meaning = (string)acceso.Reader()["meaning"];
 
@@ -66,6 +67,27 @@ namespace Modelo
             }            
         }
         
+        public void editar(Palabra palabra)
+        {
+            try
+            {                
+                acceso.setearConsulta($"update PALABRAS set word = '{palabra.word}', meaning= '{palabra.meaning}' where id = {palabra.id}");
+                acceso.ejecutarConsulta();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                acceso.cerrarConexion();
+            }
+        }
+
+
 
     }
 }

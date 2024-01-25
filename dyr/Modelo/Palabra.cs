@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Palabra
     {
-        public int id { get; }
+        public int id { get; set; }
         public string word { get; set; }
         public string meaning { get; set; }
         public string url { get; set;}

@@ -35,6 +35,7 @@ namespace Dyr
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             this.gbCargar.Visible = false;
             this.gbEditar.Visible = false;
             this.gbPracticar.Visible = false;
@@ -251,7 +252,13 @@ namespace Dyr
             this.dataGridView1.DataSource = negocio.leer();
             this.dataGridView1.Columns["id"].Visible = false;
             
-        }        
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Palabra palabraSeleccionada = (Palabra)this.dataGridView1.CurrentRow.DataBoundItem;
+            MessageBox.Show(palabraSeleccionada.id + palabraSeleccionada.word); 
+        }
 
         private void esconderSiNo()
         {
