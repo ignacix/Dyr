@@ -21,6 +21,7 @@ namespace Dyr
         private int count = 0, rPositivos = 0, rnegativos = 0; 
         private List<Palabra> listaPalabras = new List<Palabra>();
         private SpeechSynthesizer speech = new SpeechSynthesizer();
+        private Palabra palabraSeleccionada;
         public Form1()
         {
             InitializeComponent();
@@ -39,7 +40,8 @@ namespace Dyr
             this.gbCargar.Visible = false;
             this.gbEditar.Visible = false;
             this.gbPracticar.Visible = false;
-            this.gbResultado.Visible = false; 
+            this.gbResultado.Visible = false;
+            this.gbEditarPalabra.Visible = false;
         }
 
 
@@ -197,6 +199,7 @@ namespace Dyr
             devolverDiezRandom();
             this.listaPalabras = obtenerPalabras();
 
+
             lblMeaning.Visible = false;
             lblWord.Text = listaPalabras[count].word;
 
@@ -256,8 +259,35 @@ namespace Dyr
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Palabra palabraSeleccionada = (Palabra)this.dataGridView1.CurrentRow.DataBoundItem;
-            MessageBox.Show(palabraSeleccionada.id + palabraSeleccionada.word); 
+            this.palabraSeleccionada = (Palabra)this.dataGridView1.CurrentRow.DataBoundItem;
+            this.gbEditarPalabra.Visible = true;
+            this.gbEditarPalabra.Location = new Point(179, 165);
+            this.gbEditar.Location = new Point(389, 165);
+            this.txbEditarWord.Text = palabraSeleccionada.word;
+            this.txbEditarMeaning.Text = palabraSeleccionada.meaning;
+                                    
+            MessageBox.Show(palabraSeleccionada.id + palabraSeleccionada.word);            
+        }
+
+        private void btnGbEditar_Click(object sender, EventArgs e)
+        {
+            this.palabraSeleccionada.word =  this.txbEditarWord.Text;
+            this.palabraSeleccionada.meaning = this.txbEditarMeaning.Text;
+
+            try
+            {
+                PalabraNegocio negocio = new PalabraNegocio();         
+                negocio.editar(palabraSeleccionada);
+                this.gbEditarPalabra.Visible = false;
+                this.gbEditar.Location = new Point(289, 165);
+                this.dataGridView1.DataSource = negocio.leer();
+                MessageBox.Show($"La palabra {palabraSeleccionada.word} ha sido actualizada con éxito");
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void esconderSiNo()

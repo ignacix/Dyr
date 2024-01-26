@@ -53,11 +53,16 @@
             this.btnResultadoAtras = new System.Windows.Forms.Button();
             this.btnResultadoDenuevo = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
+            this.gbEditarPalabra = new System.Windows.Forms.GroupBox();
+            this.txbEditarWord = new System.Windows.Forms.TextBox();
+            this.txbEditarMeaning = new System.Windows.Forms.TextBox();
+            this.btnGbEditar = new System.Windows.Forms.Button();
             this.gbCargar.SuspendLayout();
             this.gbPracticar.SuspendLayout();
             this.gbEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbResultado.SuspendLayout();
+            this.gbEditarPalabra.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCargar
@@ -217,7 +222,7 @@
             this.gbPracticar.Controls.Add(this.btnCargarNo);
             this.gbPracticar.Controls.Add(this.btnCargarMostrar);
             this.gbPracticar.Controls.Add(this.btnCargarSi);
-            this.gbPracticar.Location = new System.Drawing.Point(259, 96);
+            this.gbPracticar.Location = new System.Drawing.Point(298, 165);
             this.gbPracticar.Name = "gbPracticar";
             this.gbPracticar.Size = new System.Drawing.Size(265, 224);
             this.gbPracticar.TabIndex = 2;
@@ -247,7 +252,7 @@
             // 
             this.gbEditar.Controls.Add(this.dataGridView1);
             this.gbEditar.Controls.Add(this.atras3);
-            this.gbEditar.Location = new System.Drawing.Point(504, 96);
+            this.gbEditar.Location = new System.Drawing.Point(541, 184);
             this.gbEditar.Name = "gbEditar";
             this.gbEditar.Size = new System.Drawing.Size(271, 224);
             this.gbEditar.TabIndex = 3;
@@ -317,14 +322,51 @@
             this.lblResultado.TabIndex = 0;
             this.lblResultado.Text = "label1";
             // 
+            // gbEditarPalabra
+            // 
+            this.gbEditarPalabra.Controls.Add(this.btnGbEditar);
+            this.gbEditarPalabra.Controls.Add(this.txbEditarMeaning);
+            this.gbEditarPalabra.Controls.Add(this.txbEditarWord);
+            this.gbEditarPalabra.Location = new System.Drawing.Point(554, 54);
+            this.gbEditarPalabra.Name = "gbEditarPalabra";
+            this.gbEditarPalabra.Size = new System.Drawing.Size(216, 124);
+            this.gbEditarPalabra.TabIndex = 5;
+            this.gbEditarPalabra.TabStop = false;
+            this.gbEditarPalabra.Text = "groupBox1";
+            // 
+            // txbEditarWord
+            // 
+            this.txbEditarWord.Location = new System.Drawing.Point(67, 36);
+            this.txbEditarWord.Name = "txbEditarWord";
+            this.txbEditarWord.Size = new System.Drawing.Size(100, 20);
+            this.txbEditarWord.TabIndex = 0;
+            // 
+            // txbEditarMeaning
+            // 
+            this.txbEditarMeaning.Location = new System.Drawing.Point(67, 62);
+            this.txbEditarMeaning.Name = "txbEditarMeaning";
+            this.txbEditarMeaning.Size = new System.Drawing.Size(100, 20);
+            this.txbEditarMeaning.TabIndex = 1;
+            // 
+            // btnGbEditar
+            // 
+            this.btnGbEditar.Location = new System.Drawing.Point(77, 88);
+            this.btnGbEditar.Name = "btnGbEditar";
+            this.btnGbEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnGbEditar.TabIndex = 2;
+            this.btnGbEditar.Text = "Editar";
+            this.btnGbEditar.UseVisualStyleBackColor = true;
+            this.btnGbEditar.Click += new System.EventHandler(this.btnGbEditar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.gbEditarPalabra);
             this.Controls.Add(this.gbResultado);
-            this.Controls.Add(this.gbEditar);
             this.Controls.Add(this.gbPracticar);
+            this.Controls.Add(this.gbEditar);
             this.Controls.Add(this.gbCargar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPracticar);
@@ -340,6 +382,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbResultado.ResumeLayout(false);
             this.gbResultado.PerformLayout();
+            this.gbEditarPalabra.ResumeLayout(false);
+            this.gbEditarPalabra.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -371,6 +415,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox gbEditarPalabra;
+        private System.Windows.Forms.Button btnGbEditar;
+        private System.Windows.Forms.TextBox txbEditarMeaning;
+        private System.Windows.Forms.TextBox txbEditarWord;
     }
 }
 
