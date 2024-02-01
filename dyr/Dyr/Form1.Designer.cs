@@ -54,9 +54,9 @@
             this.btnResultadoDenuevo = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.gbEditarPalabra = new System.Windows.Forms.GroupBox();
-            this.txbEditarWord = new System.Windows.Forms.TextBox();
-            this.txbEditarMeaning = new System.Windows.Forms.TextBox();
             this.btnGbEditar = new System.Windows.Forms.Button();
+            this.txbEditarMeaning = new System.Windows.Forms.TextBox();
+            this.txbEditarWord = new System.Windows.Forms.TextBox();
             this.gbCargar.SuspendLayout();
             this.gbPracticar.SuspendLayout();
             this.gbEditar.SuspendLayout();
@@ -155,6 +155,7 @@
             this.txbCargarMeaning.Name = "txbCargarMeaning";
             this.txbCargarMeaning.Size = new System.Drawing.Size(100, 20);
             this.txbCargarMeaning.TabIndex = 1;
+            this.txbCargarMeaning.Click += new System.EventHandler(this.txbCargarMeaning_Click);
             // 
             // txbCargarWord
             // 
@@ -162,6 +163,7 @@
             this.txbCargarWord.Name = "txbCargarWord";
             this.txbCargarWord.Size = new System.Drawing.Size(100, 20);
             this.txbCargarWord.TabIndex = 0;
+            this.txbCargarWord.Click += new System.EventHandler(this.txbCargarWord_Click);
             // 
             // lblMeaning
             // 
@@ -334,20 +336,6 @@
             this.gbEditarPalabra.TabStop = false;
             this.gbEditarPalabra.Text = "groupBox1";
             // 
-            // txbEditarWord
-            // 
-            this.txbEditarWord.Location = new System.Drawing.Point(67, 36);
-            this.txbEditarWord.Name = "txbEditarWord";
-            this.txbEditarWord.Size = new System.Drawing.Size(100, 20);
-            this.txbEditarWord.TabIndex = 0;
-            // 
-            // txbEditarMeaning
-            // 
-            this.txbEditarMeaning.Location = new System.Drawing.Point(67, 62);
-            this.txbEditarMeaning.Name = "txbEditarMeaning";
-            this.txbEditarMeaning.Size = new System.Drawing.Size(100, 20);
-            this.txbEditarMeaning.TabIndex = 1;
-            // 
             // btnGbEditar
             // 
             this.btnGbEditar.Location = new System.Drawing.Point(77, 88);
@@ -357,6 +345,20 @@
             this.btnGbEditar.Text = "Editar";
             this.btnGbEditar.UseVisualStyleBackColor = true;
             this.btnGbEditar.Click += new System.EventHandler(this.btnGbEditar_Click);
+            // 
+            // txbEditarMeaning
+            // 
+            this.txbEditarMeaning.Location = new System.Drawing.Point(67, 62);
+            this.txbEditarMeaning.Name = "txbEditarMeaning";
+            this.txbEditarMeaning.Size = new System.Drawing.Size(100, 20);
+            this.txbEditarMeaning.TabIndex = 1;
+            // 
+            // txbEditarWord
+            // 
+            this.txbEditarWord.Location = new System.Drawing.Point(67, 36);
+            this.txbEditarWord.Name = "txbEditarWord";
+            this.txbEditarWord.Size = new System.Drawing.Size(100, 20);
+            this.txbEditarWord.TabIndex = 0;
             // 
             // Form1
             // 

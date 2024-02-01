@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Synthesis;
+using FluentValidation.Results;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Dyr
 {
@@ -129,12 +131,18 @@ namespace Dyr
 
         private void btnGbCargar_Click(object sender, EventArgs e)
         {
-            if (this.txbCargarWord.Text.Length >1 && this.txbCargarMeaning.Text.Length > 1)
+
+            PalabraValidation validator = new PalabraValidation();
+            Palabra aux = new Palabra();
+            aux.word = this.txbCargarWord.Text;
+            aux.meaning = this.txbCargarMeaning.Text;
+            ValidationResult resultado = validator.Validate(aux);
+            
+            
+
+            if (resultado.IsValid)
             {
                 PalabraNegocio negocio = new PalabraNegocio();
-                Palabra aux = new Palabra();
-                aux.word = this.txbCargarWord.Text;
-                aux.meaning = this.txbCargarMeaning.Text;
                 negocio.Cargar(aux);
                 MessageBox.Show($"La palabra : {aux.word}, se ha cargado exitosamente");
                 this.txbCargarMeaning.Text = ""; 
@@ -142,8 +150,22 @@ namespace Dyr
             }
             else
             {
-                MessageBox.Show("Por favor cargue los campos");
-            }
+                foreach (var error in resultado.Errors)
+                {
+                    switch (error.ErrorMessage)
+                    {
+                        case ("Ingrese una palabra"):
+                            this.txbCargarWord.BackColor = Color.LightPink;
+                            break;
+                        case ("Ingrese un significado"):
+                            this.txbCargarMeaning.BackColor = Color.LightPink;
+                            break;
+
+
+                    }                    
+                    MessageBox.Show(error.ErrorMessage);
+                }
+            }            
         }
 
 
@@ -288,6 +310,18 @@ namespace Dyr
             {
                 throw ex;
             }
+        }
+
+        private void txbCargarWord_Click(object sender, EventArgs e)
+        {
+            this.txbCargarWord.BackColor = Color.White;
+            
+        }
+
+        private void txbCargarMeaning_Click(object sender, EventArgs e)
+        {
+            
+            this.txbCargarMeaning.BackColor = Color.White;
         }
 
         private void esconderSiNo()

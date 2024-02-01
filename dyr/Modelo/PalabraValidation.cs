@@ -10,7 +10,11 @@ namespace Modelo
     {
         public PalabraValidation() 
         {
-            RuleFor(palabra => palabra.word).NotNull();
+            RuleFor(palabra => palabra.word).NotEmpty().WithMessage("Ingrese una palabra");
+            RuleFor(Palabra => Palabra.meaning).NotEmpty().WithMessage("Ingrese un significado");
+            RuleFor(palabra => palabra.word).MaximumLength(50);
+            RuleFor(palabra => palabra.meaning).MaximumLength(50);
+
         }
     }
 }
