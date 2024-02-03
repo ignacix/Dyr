@@ -43,7 +43,7 @@ namespace Modelo
                 
             try
             {
-                acceso.setearConsulta("select * from PALABRAS");
+                acceso.setearConsulta("select * from PALABRAS order by word");
                 acceso.realizarConsulta();
 
                 while (acceso.Reader().Read())
