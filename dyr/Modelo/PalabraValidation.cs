@@ -13,8 +13,10 @@ namespace Modelo
         {
             RuleFor(palabra => palabra.word).NotEmpty().WithMessage("Ingrese una palabra");
             RuleFor(Palabra => Palabra.meaning).NotEmpty().WithMessage("Ingrese un significado");
+            RuleFor(palabra => palabra.url).NotEmpty().WithMessage("Ingrese URL"); ;
             RuleFor(palabra => palabra.word).MaximumLength(50);
             RuleFor(palabra => palabra.meaning).MaximumLength(50);
+            RuleFor(palabra => palabra.url).MaximumLength(100);
 
         }
     }

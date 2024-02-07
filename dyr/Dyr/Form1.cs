@@ -136,6 +136,7 @@ namespace Dyr
             Palabra aux = new Palabra();
             aux.word = this.txbCargarWord.Text;
             aux.meaning = this.txbCargarMeaning.Text;
+            aux.url = this.txbCargarImagen.Text;
             ValidationResult resultado = validator.Validate(aux);
             
             
@@ -147,6 +148,7 @@ namespace Dyr
                 MessageBox.Show($"La palabra : {aux.word}, se ha cargado exitosamente");
                 this.txbCargarMeaning.Text = ""; 
                 this.txbCargarWord.Text = "";
+                this.txbCargarImagen.Text = ""; 
             }
             else
             {
@@ -287,6 +289,7 @@ namespace Dyr
             this.gbEditar.Location = new Point(389, 165);
             this.txbEditarWord.Text = palabraSeleccionada.word;
             this.txbEditarMeaning.Text = palabraSeleccionada.meaning;
+            this.txbEditarUrl.Text = palabraSeleccionada.url;
                                     
             MessageBox.Show(palabraSeleccionada.id + palabraSeleccionada.word);            
         }
@@ -322,6 +325,16 @@ namespace Dyr
         {
             
             this.txbCargarMeaning.BackColor = Color.White;
+        }
+
+        private void txbCargarImagen_TextChanged(object sender, EventArgs e)
+        {
+            this.pictureBox1.ImageLocation = this.txbCargarImagen.Text;
+        }
+
+        private void txbEditarUrl_TextChanged(object sender, EventArgs e)
+        {
+            this.pictureBox2.ImageLocation = this.txbEditarUrl.Text;
         }
 
         private void esconderSiNo()

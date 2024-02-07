@@ -20,7 +20,7 @@ namespace Modelo
         {
             try
             {
-                acceso.setearConsulta($"insert into PALABRAS (word, meaning) values ('{palabra.word}','{palabra.meaning}')");
+                acceso.setearConsulta($"insert into PALABRAS (word, meaning, img) values ('{palabra.word}','{palabra.meaning}','{palabra.url}')");
                 acceso.ejecutarConsulta();
             }
             catch (Exception ex)
@@ -52,6 +52,13 @@ namespace Modelo
                     aux.id = (int)acceso.Reader()["id"];
                     aux.word = (string)acceso.Reader()["word"];
                     aux.meaning = (string)acceso.Reader()["meaning"];
+                    if (acceso.Reader()["img"] == null)
+                    {
+                        aux.url = "*";
+                    }
+                    else{
+                        
+                    }
 
                     lista.Add(aux);
                 }
