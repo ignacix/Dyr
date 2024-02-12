@@ -52,12 +52,12 @@ namespace Modelo
                     aux.id = (int)acceso.Reader()["id"];
                     aux.word = (string)acceso.Reader()["word"];
                     aux.meaning = (string)acceso.Reader()["meaning"];
-                    if (acceso.Reader()["img"] == null)
+                    if (acceso.Reader()["img"] != DBNull.Value)
                     {
-                        aux.url = "*";
+                        aux.url = (string)acceso.Reader()["img"];
                     }
                     else{
-                        
+                        aux.url = "*";
                     }
 
                     lista.Add(aux);
