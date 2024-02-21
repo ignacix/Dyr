@@ -32,6 +32,9 @@
             this.btnPracticar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gbCargar = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txbCargarImagen = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.atras1 = new System.Windows.Forms.Button();
@@ -54,24 +57,22 @@
             this.btnResultadoDenuevo = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.gbEditarPalabra = new System.Windows.Forms.GroupBox();
+            this.btnGbEditarAtrás = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txbEditarUrl = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnGbEditar = new System.Windows.Forms.Button();
             this.txbEditarMeaning = new System.Windows.Forms.TextBox();
             this.txbEditarWord = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txbCargarImagen = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txbEditarUrl = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gbCargar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbPracticar.SuspendLayout();
             this.gbEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbResultado.SuspendLayout();
             this.gbEditarPalabra.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +124,32 @@
             this.gbCargar.TabIndex = 1;
             this.gbCargar.TabStop = false;
             this.gbCargar.Text = "groupBox1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(205, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txbCargarImagen
+            // 
+            this.txbCargarImagen.Location = new System.Drawing.Point(75, 119);
+            this.txbCargarImagen.Name = "txbCargarImagen";
+            this.txbCargarImagen.Size = new System.Drawing.Size(100, 20);
+            this.txbCargarImagen.TabIndex = 7;
+            this.txbCargarImagen.TextChanged += new System.EventHandler(this.txbCargarImagen_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "url Imagen:";
             // 
             // label2
             // 
@@ -267,7 +294,7 @@
             // 
             this.gbEditar.Controls.Add(this.dataGridView1);
             this.gbEditar.Controls.Add(this.atras3);
-            this.gbEditar.Location = new System.Drawing.Point(495, 184);
+            this.gbEditar.Location = new System.Drawing.Point(619, 233);
             this.gbEditar.Name = "gbEditar";
             this.gbEditar.Size = new System.Drawing.Size(317, 224);
             this.gbEditar.TabIndex = 3;
@@ -277,11 +304,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 50);
+            this.dataGridView1.Location = new System.Drawing.Point(-32, 50);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(277, 158);
+            this.dataGridView1.Size = new System.Drawing.Size(325, 158);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -339,6 +366,7 @@
             // 
             // gbEditarPalabra
             // 
+            this.gbEditarPalabra.Controls.Add(this.btnGbEditarAtrás);
             this.gbEditarPalabra.Controls.Add(this.pictureBox2);
             this.gbEditarPalabra.Controls.Add(this.txbEditarUrl);
             this.gbEditarPalabra.Controls.Add(this.label6);
@@ -347,12 +375,66 @@
             this.gbEditarPalabra.Controls.Add(this.btnGbEditar);
             this.gbEditarPalabra.Controls.Add(this.txbEditarMeaning);
             this.gbEditarPalabra.Controls.Add(this.txbEditarWord);
-            this.gbEditarPalabra.Location = new System.Drawing.Point(511, 54);
+            this.gbEditarPalabra.Location = new System.Drawing.Point(604, 69);
             this.gbEditarPalabra.Name = "gbEditarPalabra";
             this.gbEditarPalabra.Size = new System.Drawing.Size(295, 158);
             this.gbEditarPalabra.TabIndex = 5;
             this.gbEditarPalabra.TabStop = false;
             this.gbEditarPalabra.Text = "groupBox1";
+            // 
+            // btnGbEditarAtrás
+            // 
+            this.btnGbEditarAtrás.Location = new System.Drawing.Point(204, 16);
+            this.btnGbEditarAtrás.Name = "btnGbEditarAtrás";
+            this.btnGbEditarAtrás.Size = new System.Drawing.Size(75, 23);
+            this.btnGbEditarAtrás.TabIndex = 8;
+            this.btnGbEditarAtrás.Text = "Atrás";
+            this.btnGbEditarAtrás.UseVisualStyleBackColor = true;
+            this.btnGbEditarAtrás.Click += new System.EventHandler(this.btnGbEditarAtrás_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(189, 50);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 71);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txbEditarUrl
+            // 
+            this.txbEditarUrl.Location = new System.Drawing.Point(72, 82);
+            this.txbEditarUrl.Name = "txbEditarUrl";
+            this.txbEditarUrl.Size = new System.Drawing.Size(100, 20);
+            this.txbEditarUrl.TabIndex = 6;
+            this.txbEditarUrl.TextChanged += new System.EventHandler(this.txbEditarUrl_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 85);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "url Imagen:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Significado:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Palabra:";
             // 
             // btnGbEditar
             // 
@@ -378,80 +460,11 @@
             this.txbEditarWord.Size = new System.Drawing.Size(100, 20);
             this.txbEditarWord.TabIndex = 0;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "url Imagen:";
-            // 
-            // txbCargarImagen
-            // 
-            this.txbCargarImagen.Location = new System.Drawing.Point(75, 119);
-            this.txbCargarImagen.Name = "txbCargarImagen";
-            this.txbCargarImagen.Size = new System.Drawing.Size(100, 20);
-            this.txbCargarImagen.TabIndex = 7;
-            this.txbCargarImagen.TextChanged += new System.EventHandler(this.txbCargarImagen_TextChanged);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(205, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Palabra:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 53);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Significado:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 85);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "url Imagen:";
-            // 
-            // txbEditarUrl
-            // 
-            this.txbEditarUrl.Location = new System.Drawing.Point(72, 82);
-            this.txbEditarUrl.Name = "txbEditarUrl";
-            this.txbEditarUrl.Size = new System.Drawing.Size(100, 20);
-            this.txbEditarUrl.TabIndex = 6;
-            this.txbEditarUrl.TextChanged += new System.EventHandler(this.txbEditarUrl_TextChanged);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(189, 27);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 71);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(911, 450);
             this.Controls.Add(this.gbEditarPalabra);
             this.Controls.Add(this.gbResultado);
             this.Controls.Add(this.gbPracticar);
@@ -465,6 +478,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbCargar.ResumeLayout(false);
             this.gbCargar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbPracticar.ResumeLayout(false);
             this.gbPracticar.PerformLayout();
             this.gbEditar.ResumeLayout(false);
@@ -473,7 +487,6 @@
             this.gbResultado.PerformLayout();
             this.gbEditarPalabra.ResumeLayout(false);
             this.gbEditarPalabra.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -518,6 +531,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txbEditarUrl;
+        private System.Windows.Forms.Button btnGbEditarAtrás;
     }
 }
 

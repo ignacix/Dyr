@@ -20,7 +20,7 @@ namespace Modelo
         {
             try
             {
-                acceso.setearConsulta($"insert into PALABRAS (word, meaning, img) values ('{palabra.word}','{palabra.meaning}','{palabra.url}')");
+                acceso.setearConsulta($"insert into PALABRAS (word, meaning, img, cp) values ('{palabra.word}','{palabra.meaning}','{palabra.url}', 0)");
                 acceso.ejecutarConsulta();
             }
             catch (Exception ex)
@@ -59,6 +59,15 @@ namespace Modelo
                     else{
                         aux.url = "*";
                     }
+                    if (acceso.Reader()["cp"] != DBNull.Value)
+                    {
+                        aux.cp = (short)acceso.Reader()["cp"];
+                    }
+                    else
+                    {
+                        aux.cp = 0;
+                    }
+                    
 
                     lista.Add(aux);
                 }
@@ -78,7 +87,7 @@ namespace Modelo
         {
             try
             {                
-                acceso.setearConsulta($"update PALABRAS set word = '{palabra.word}', meaning= '{palabra.meaning}' where id = {palabra.id}");
+                acceso.setearConsulta($"update PALABRAS set word = '{palabra.word}', meaning= '{palabra.meaning}', img = '{palabra.url}' where id = {palabra.id}");
                 acceso.ejecutarConsulta();
 
 

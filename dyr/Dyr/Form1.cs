@@ -162,8 +162,6 @@ namespace Dyr
                         case ("Ingrese un significado"):
                             this.txbCargarMeaning.BackColor = Color.LightPink;
                             break;
-
-
                     }                    
                     MessageBox.Show(error.ErrorMessage);
                 }
@@ -287,6 +285,7 @@ namespace Dyr
             this.gbEditarPalabra.Visible = true;
             this.gbEditarPalabra.Location = new Point(179, 165);
             this.gbEditar.Location = new Point(389, 165);
+            this.pictureBox2.ImageLocation = palabraSeleccionada.url.ToString();
             this.txbEditarWord.Text = palabraSeleccionada.word;
             this.txbEditarMeaning.Text = palabraSeleccionada.meaning;
             this.txbEditarUrl.Text = palabraSeleccionada.url;
@@ -296,22 +295,47 @@ namespace Dyr
 
         private void btnGbEditar_Click(object sender, EventArgs e)
         {
+            PalabraValidation validation = new PalabraValidation();
             this.palabraSeleccionada.word =  this.txbEditarWord.Text;
             this.palabraSeleccionada.meaning = this.txbEditarMeaning.Text;
+            this.palabraSeleccionada.url = this.txbEditarUrl.Text;
+            ValidationResult result = validation.Validate(palabraSeleccionada);
 
-            try
+            if (result.IsValid)
             {
-                PalabraNegocio negocio = new PalabraNegocio();         
-                negocio.editar(palabraSeleccionada);
-                this.gbEditarPalabra.Visible = false;
-                this.gbEditar.Location = new Point(289, 165);
-                this.dataGridView1.DataSource = negocio.leer();
-                MessageBox.Show($"La palabra {palabraSeleccionada.word} ha sido actualizada con éxito");
+                try
+                {
+                    PalabraNegocio negocio = new PalabraNegocio();         
+                    negocio.editar(palabraSeleccionada);
+                    this.gbEditarPalabra.Visible = false;
+                    this.gbEditar.Location = new Point(289, 165);
+                    this.dataGridView1.DataSource = negocio.leer();
+                    MessageBox.Show($"La palabra {palabraSeleccionada.word} ha sido actualizada con éxito");
                 
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                throw ex;
+                foreach (var error in result.Errors)
+                {
+                    switch (error.ErrorMessage)
+                    {
+                        case ("Ingrese una palabra"):
+                            this.txbEditarWord.BackColor = Color.LightPink;
+                            break;
+                        case ("Ingrese un significado"):
+                            this.txbEditarMeaning.BackColor = Color.LightPink;
+                            break;
+                        case ("Ingrese URL"):
+                            this.txbEditarUrl.BackColor = Color.LightPink;
+                            break;
+                    }
+                    MessageBox.Show(error.ErrorMessage);
+                }
             }
         }
 
@@ -335,6 +359,14 @@ namespace Dyr
         private void txbEditarUrl_TextChanged(object sender, EventArgs e)
         {
             this.pictureBox2.ImageLocation = this.txbEditarUrl.Text;
+        }
+
+        private void btnGbEditarAtrás_Click(object sender, EventArgs e)
+        {
+            this.gbEditarPalabra.Visible = false; 
+            this.txbEditarUrl.Text = "";
+            this.txbEditarWord.Text = "";
+            this.txbEditarMeaning.Text = "";
         }
 
         private void esconderSiNo()

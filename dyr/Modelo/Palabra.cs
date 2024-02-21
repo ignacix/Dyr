@@ -13,5 +13,9 @@ namespace Modelo
         public string meaning { get; set; }
         public string url { get; set;}
 
+        public int cp { get; set; }
+
+
+
     }
 }
